@@ -1,12 +1,12 @@
 # Table Of Contents
-- [Introduction to Machine Learning](#class-8/31-:-introduction-to-machine-learning)
+- [Introduction to Machine Learning](#class-8-31-:-introduction-to-machine-learning)
     - [Data Representation](##Data-representation)
     - [Types of Data](##Types-of-Data)
     - [Data Representation](##Data-Representation)
-- [Class-9/2-:](#Class-9/2-:)
+- [Class-9/2-:](#Class-9-2-:)
 
 
-# Class 8/31 : Introduction to Machine Learning
+# Class 8-31 : Introduction to Machine Learning
 
 ## Data representation: 
     While in general we use binary for computer science, we use matrix/vectors for machine learning. 
@@ -48,4 +48,4 @@
 ### *Missing Data can be a big problem in Machine Learning, and thus some cleaning of the data must of compleated. If a sample has too many missing values, then the data can be discarded, otherwise, when few bits of data are missing, the values can be computed using something such ash Near Neighbour.*     
 
 
-# Class 9/2: 
+# Class 9-2: 
