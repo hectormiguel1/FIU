@@ -1,5 +1,5 @@
 # Table Of Contents
-- [Introduction to Machine Learning](#Class-8/31-:-Introduction-to-Machine-Learning)
+- [Introduction to Machine Learning](#class-8/31-:-introduction-to-machine-learning)
     - [Data Representation](##Data-representation)
     - [Types of Data](##Types-of-Data)
     - [Data Representation](##Data-Representation)
