@@ -1,0 +1,1 @@
+All the works in this page are under MIT License you are free to use it as long as proper recognition is provided. 
