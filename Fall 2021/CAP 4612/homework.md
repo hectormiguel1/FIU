@@ -101,7 +101,7 @@ Here PCA has allowed us to reduce the number of dimensions in our data, allowing
 
 <img src="./tSNE.png" />
 
-tSNE has provided us a much clearer look at how our samples are distributed in the new features created by tSNE. More importantly we can begging to see how each digit begin to cluster around some sections of the graph, while other digits which share a lot of common features begin to cluster together. An example here would be 4 (purple)  and 9 (light blue), as we can see from the tSNE these digits have a lot of features in common, and thus most of their data points are represented very close to one another. 
+tSNE has provided us a much clearer look at how our samples are distributed in the new features created by tSNE. More importantly we can begin to see how each digit begin to cluster around some sections of the graph, while other digits which share a lot of common features begin to cluster together. An example here would be 4 (purple)  and 9 (light blue), as we can see from the tSNE these digits have a lot of features in common, and thus most of their data points are represented very close to one another. 
 
 <div style="page-break-after: always;"></div>
 
