@@ -17,6 +17,7 @@
     - [Recast Data](#recast-data)
   - [t-Distributed Stochastic Neighbor Embedding (tSNE):](#t-distributed-stochastic-neighbor-embedding-tsne)
 - [Figures](#figures)
+  - [MNIST Digit Visualization](#mnist-digit-visualization)
   - [MNIST PCA](#mnist-pca)
   - [MNIST tSNE](#mnist-tsne)
   - [Housing Training Violin Plot](#housing-training-violin-plot)
@@ -79,6 +80,15 @@ When conditional probability distributions between data points with high- and lo
 # Figures 
 
 In this section we will go over the output of the PCA, tSNE and Violin Plot for the Assignment. 
+
+## MNIST Digit Visualization
+<img src="./digits.png" />
+
+This is a sample of the digits in the MNIST Data, this is used to provide some context to the data which is being worked with. 
+
+<div style="page-break-after: always;"></div>
+
+
 ## MNIST PCA
 
 <img src="./PCA.png" />
@@ -98,6 +108,8 @@ tSNE has provided us a much clearer look at how our samples are distributed in t
 ## Housing Training Violin Plot
 
 <img src="./violin-plot.png" />
+
+The violin plot in the image provides a clear perspective as to the distribution of values in the provided CSV. The violin plot is exceptionally good at visualizing where most values are located, as well as the overall distribution of those values in the data set. For example in Column 1 of the data set, we can observe how most of the values cluster around 0, while in the Column 12, most of the values cluster around 400. 
 
 
 <div style="page-break-after: always;"></div>
