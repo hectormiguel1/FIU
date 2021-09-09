@@ -59,7 +59,7 @@ Eigenvectors come in pairs, for each one there is an accompanying Eigenvalue, th
 
 ### Feature Vector
 
-After we have ranked the eigenvectors, we can select that which contains the most information of them all. Usually by this point in the process, the most information is contained on the first vector, and the fallowing contain further diminishing data. 
+After we have ranked the eigenvectors, we can select which contain the most information of them all. Usually by this point in the process, the most information is contained on the first vector, and the fallowing contain further diminishing data. 
 
 ### Recast Data
 
