@@ -17,7 +17,8 @@
    -    `python mnist-visualizer.py [PATH TO MNIST.CSV]`
 - [house_traning.py](./house_training.py): Takes house training data CSV as command line argument. 
   - `python house_training.py [PATH TO HOUSE TRAINING.CSV]`
-
+- [requrements.txt](./requirements.txt) : Used to install librery dependencies.
+  -   `pip install -r requirements.txt`
 
 <div style="page-break-after: always;"></div>
 
