@@ -43,7 +43,7 @@
         - Transforms the data in the high-dimensional space to a space of fewer dimensions. 
         - Dimensional Reduction when actual features are found and the search space is lowered.  
         - Feature Engineering: Process that takes raw data and transforms it into features that can be used to create a predictive model using machine learning or statistical modeling.
-
+table of Contents
     
 ### *Missing Data can be a big problem in Machine Learning, and thus some cleaning of the data must of completed. If a sample has too many missing values, then the data can be discarded, otherwise, when few bits of data are missing, the values can be computed using something such ash Near Neighbor.*     
 

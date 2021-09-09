@@ -1,3 +1,6 @@
+<title>Data Visualization </title>
+
+
 # Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Algorithms](#algorithms)
@@ -8,6 +11,10 @@
     - [Feature Vector](#feature-vector)
     - [Recast Data](#recast-data)
   - [t-Distributed Stochastic Neighbor Embedding (tSNE):](#t-distributed-stochastic-neighbor-embedding-tsne)
+- [Figures](#figures)
+  - [MNIST PCA](#mnist-pca)
+  - [MNIST tSNE](#mnist-tsne)
+  - [Housing Training Violin Plot](#housing-training-violin-plot)
 - [Works Cited](#works-cited)
 
 
@@ -48,7 +55,27 @@ After the feature vector/s was selected from the step above, the entire data set
 
 
 ## t-Distributed Stochastic Neighbor Embedding (tSNE): 
+T-distributed stochastic neighbor embedding (T-SNE) is an unsupervised machine learning algorithm developed by Laurens van der Maaten and Geoffrey Hinton for visualization. It models high-dimensional objects between two and three-dimensional points in such a way that similar objects are modeled as close points and unequal objects are likely to be modeled as distant points. In addition, we offer a Matlab implementation of parametric T-SN as described above.
 
+It constructs a probability distribution for each pair of high-dimensional objects in such a manner that similar objects are assigned a high probability and unequal points are assigned a low probability. The SNE algorithm transforms the Euclidean distance between the higher-dimensional data points into a conditional probability that represents the similarity of the next data point, which means the highest similarity. The algorithm defines a similar probability distribution between the points on the underdimensional map and minimizes Kullback-Leibler (KL) divergence between the two distributions in terms of the location of the points on the map.
+
+When conditional probability distributions between data points with high- and low-dimensional representations are calculated, the algorithm aims to minimize the discrepancy between the two representations. The conversion of the original data into new data preserves the variance of the original using eigenvalues. nts an optimization problem for T-SNE.
+
+
+# Figures 
+In this section we will go over the output of the PCA, tSNE and Violin Plot for the Assignment. 
+## MNIST PCA
+<img src="./PCA.png" />
+
+Here PCA has allowed us to reduce the number of dimensions in our data, allowing us to represent the data in 2 dimensions from the original 700+ dimensions. Even at this stage we can begin to observe some clustering occurring in the digits, while the bulk of the samples are clustered around the 0,0 mark. 
+
+## MNIST tSNE
+<img src="./tSNE.png" />
+
+tSNE has provided us a much clearer look at how our samples are distributed in the new features created by tSNE. More importantly we can begging to see how each digit begin to cluster around some sections of the graph, while other digits which share a lot of common features begin to cluster together. An example here would be 4 (purple)  and 9 (light blue), as we can see from the tSNE these digits have a lot of features in common, and thus most of their data points are represented very close to one another. 
+
+## Housing Training Violin Plot
+<img src="./violin-plot.png" />
 
 # Works Cited
 These websites were essential in understanding how the algorithms used in the project worked and to gain a deep understanding. 
