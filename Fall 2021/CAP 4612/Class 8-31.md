@@ -17,6 +17,10 @@
   - [Pros and Cons](#pros-and-cons)
 - [Evaluation](#evaluation)
   - [Metrics](#metrics)
+  - [Limitiation of Accuracy](#limitiation-of-accuracy)
+  - [ROC Curve](#roc-curve)
+  - [Methods of Validation](#methods-of-validation)
+  - [Stratified cross-validation](#stratified-cross-validation)
 
 
 # Class 8-31 : Introduction to Machine Learning
@@ -173,3 +177,41 @@ Give K >= N/2: Prediction from model will no always be 'Major Class'
 | | Accuracy (ACC) = \(\frac {\sum True Positive + \sum True Negative} {\sum Total Population}\) | Positive Predictive Value (PPV), Precision = \(\frac {\sum True Positive} {\sum Test Outcome Positive}\) | False Ommision Rate (FOR) = \(\frac {\sum False Negative} {\sum Test Outcome Negative}\) | Positive Likelyhood ratio  = \( LR+ = \frac {TPR} {FPR} \) | Diagnostics Odds Ratio \(DOR = \frac {LDR+} {LDR-}\) | 
 | | | False Discovery Rate (FDR) = \(\frac {\sum False Positive} {\sum Test Outcome Positive}\)  | Negative Predictive Value = (NPV) = \(\frac {\sum True Negative} {\sum Test Outcome Negative}\) | Nagive Likelyhood ratio = \( LR- = \frac {FNR} {TNR} \)| |
 
+## Limitiation of Accuracy
+
+- There are conditions in which accuracy alone is not a good metric to determine the validity of the alorith, thus weighted accuracy is a better metric to track the alogrithm on, this is the case for data sets which are highly unbalanaced
+  - Instead data needs to be normalized, before it can be used
+  
+## ROC Curve 
+
+- Receiver Operating Characteristc
+  - Graphical approach for displaying the tradeoff between true positive rate (TPR) and false positive rate (FPR) of a classifier
+  - TPR on y-axis and FPR on x-axis
+  - The area under the graph represents the quality of the algorithm
+  
+| TPR | FPR | Outcome |
+| - | - | - |
+| 0 | 0 | Ever Prediction is Negative |
+| 1 | 0 | Ideal |
+| 1 | 1 | Ever Prediction is positive |
+
+## Methods of Validation 
+- Holdout 
+  - Use 2/3 of training and 1/3 for testing 
+- Corss-Validation 
+  - Random subsampling
+  - K-Fold Cross Validation 
+  - Leave-one-out
+- Stratified cross validation
+  - Stratified 10-fold cross validation is often the best 
+- Bootstrapping 
+  - Sampling with replacements 
+  - Oversampling vs undersampling 
+
+## Stratified cross-validation
+
+When dandomly slelecting training or test sets, ensure that class proportions are maintained in each selected set. 
+
+1. Stratify instances by class 
+2. Randomly select instance from each class. 
+  
