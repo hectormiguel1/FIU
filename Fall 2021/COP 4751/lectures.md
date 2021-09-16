@@ -4,6 +4,9 @@
   - [Implementation](#implementation)
   - [Equivalence Rules](#equivalence-rules)
   - [Video](#video)
+- [Transaction Processing, ACID Properties, Seralizability](#transaction-processing-acid-properties-seralizability)
+  - [What is a database transaction?](#what-is-a-database-transaction)
+  - [ACID:](#acid)
 # Query Optimization
 ## Implementation 
 The query optimizer attempts to determine the most efficient way to execute a given query by considering query plans. 
@@ -25,8 +28,24 @@ Each node has zero or mode child nodes - those are nodes whose output...
    
 ## Video 
 Start at Minutes 38 to minute 41
+
 Move to minue 44 
 
+# Transaction Processing, ACID Properties, Seralizability
+
+## What is a database transaction?
+
+- A Database Transaction a logical unit of processing in DBMS
+## ACID
+- Atomicity: A transiction is a single unot of operation 
+- ConsistencyuL ONce a trasanctio  is executed it shoud move on consistent state to another
+- Isolation: Transaction should be executed... 
+- 
+
+
+
+
+  
 
 
 

@@ -1,5 +1,4 @@
-# Table of Contents
-- [Table of Contents](#table-of-contents)
+ [Table of Contents](#table-of-contents)
 - [Class 8-31 : Introduction to Machine Learning](#class-8-31--introduction-to-machine-learning)
   - [Data representation:](#data-representation)
   - [Types of Data](#types-of-data)
@@ -21,6 +20,8 @@
   - [ROC Curve](#roc-curve)
   - [Methods of Validation](#methods-of-validation)
   - [Stratified cross-validation](#stratified-cross-validation)
+- [Linear Regression](#linear-regression)
+  - [Correlation (r)](#correlation-r)
 
 
 # Class 8-31 : Introduction to Machine Learning
@@ -117,15 +118,15 @@ Model Testing:
   - Assigned to the most common class amongst its k-nearest neighbors (by measuring "distant" between data). 
 
 ### Training Data
-  | | Label |   
-  |- | -|
-  | 1 | A | 
-  |2 | B |
-  | 3 | A | 
-  | 4 | A | 
-  | 5 | B |
-  | 6 | B | 
-  | 7 | B | 
+  |     | Label |
+  | --- | ----- |
+  | 1   | A     |
+  | 2   | B     |
+  | 3   | A     |
+  | 4   | A     |
+  | 5   | B     |
+  | 6   | B     |
+  | 7   | B     |
 
 Sort in ascending  order 
 
@@ -169,13 +170,13 @@ Give K >= N/2: Prediction from model will no always be 'Major Class'
 - Confusion Matrix: shows performance of an alogrithm, specially predictive capability.  
 
 
-| | | Prediction Condition | | | |
-| - | - | - | - | - | - |
-| | Total Population | Predicted Condition Positive | Predicted Condition Negative | Prelevance = \(\frac {\sum Condition Positive} {\sum Total Population} \) | |
-| True Condition | Condition Positive | True positive | False Negative | True Positive Rate (TPR), Sensitivity, Recall = \( \frac {\sum True Positive} {\sum Condition Positive} \) | False Negative Rate (FNR), Miss Rate = \( \frac {\sum False Negative} {\sum Condition Positive} \) |
-| True Condition | Condition Negative | False Positive (Type I Error) | True Negative | False Positive Rate (FPR), Fall out = \(\frac {\sum False Positive} {\sum Condition Negative}\) | True Negative Rate (TNR), Specifity (SPC) \(\frac {\sum True Negative} {\sum Condition Negative}\) | 
-| | Accuracy (ACC) = \(\frac {\sum True Positive + \sum True Negative} {\sum Total Population}\) | Positive Predictive Value (PPV), Precision = \(\frac {\sum True Positive} {\sum Test Outcome Positive}\) | False Ommision Rate (FOR) = \(\frac {\sum False Negative} {\sum Test Outcome Negative}\) | Positive Likelyhood ratio  = \( LR+ = \frac {TPR} {FPR} \) | Diagnostics Odds Ratio \(DOR = \frac {LDR+} {LDR-}\) | 
-| | | False Discovery Rate (FDR) = \(\frac {\sum False Positive} {\sum Test Outcome Positive}\)  | Negative Predictive Value = (NPV) = \(\frac {\sum True Negative} {\sum Test Outcome Negative}\) | Nagive Likelyhood ratio = \( LR- = \frac {FNR} {TNR} \)| |
+|                |                                                                                              | Prediction Condition                                                                                     |                                                                                                 |                                                                                                            |                                                                                                    |
+| -------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+|                | Total Population                                                                             | Predicted Condition Positive                                                                             | Predicted Condition Negative                                                                    | Prelevance = \(\frac {\sum Condition Positive} {\sum Total Population} \)                                  |                                                                                                    |
+| True Condition | Condition Positive                                                                           | True positive                                                                                            | False Negative                                                                                  | True Positive Rate (TPR), Sensitivity, Recall = \( \frac {\sum True Positive} {\sum Condition Positive} \) | False Negative Rate (FNR), Miss Rate = \( \frac {\sum False Negative} {\sum Condition Positive} \) |
+| True Condition | Condition Negative                                                                           | False Positive (Type I Error)                                                                            | True Negative                                                                                   | False Positive Rate (FPR), Fall out = \(\frac {\sum False Positive} {\sum Condition Negative}\)            | True Negative Rate (TNR), Specifity (SPC) \(\frac {\sum True Negative} {\sum Condition Negative}\) |
+|                | Accuracy (ACC) = \(\frac {\sum True Positive + \sum True Negative} {\sum Total Population}\) | Positive Predictive Value (PPV), Precision = \(\frac {\sum True Positive} {\sum Test Outcome Positive}\) | False Ommision Rate (FOR) = \(\frac {\sum False Negative} {\sum Test Outcome Negative}\)        | Positive Likelyhood ratio  = \( LR+ = \frac {TPR} {FPR} \)                                                 | Diagnostics Odds Ratio \(DOR = \frac {LDR+} {LDR-}\)                                               |
+|                |                                                                                              | False Discovery Rate (FDR) = \(\frac {\sum False Positive} {\sum Test Outcome Positive}\)                | Negative Predictive Value = (NPV) = \(\frac {\sum True Negative} {\sum Test Outcome Negative}\) | Nagive Likelyhood ratio = \( LR- = \frac {FNR} {TNR} \)                                                    |                                                                                                    |
 
 ## Limitiation of Accuracy
 
@@ -187,13 +188,13 @@ Give K >= N/2: Prediction from model will no always be 'Major Class'
 - Receiver Operating Characteristc
   - Graphical approach for displaying the tradeoff between true positive rate (TPR) and false positive rate (FPR) of a classifier
   - TPR on y-axis and FPR on x-axis
-  - The area under the graph represents the quality of the algorithm
+  - The area under the graph represents the quality of the algorithm 
   
-| TPR | FPR | Outcome |
-| - | - | - |
-| 0 | 0 | Ever Prediction is Negative |
-| 1 | 0 | Ideal |
-| 1 | 1 | Ever Prediction is positive |
+| TPR | FPR | Outcome                     |
+| --- | --- | --------------------------- |
+| 0   | 0   | Ever Prediction is Negative |
+| 1   | 0   | Ideal                       |
+| 1   | 1   | Ever Prediction is positive |
 
 ## Methods of Validation 
 - Holdout 
@@ -215,3 +216,19 @@ When dandomly slelecting training or test sets, ensure that class proportions ar
 1. Stratify instances by class 
 2. Randomly select instance from each class. 
   
+# Linear Regression
+## Correlation (r)
+
+- Linerar associaten between two variables
+- Show how to determine both the nature and strength of relationship between two variables
+- Correlation lies between  + 1 to -1
+- Zero correlation indicates thaty there is no relationship between the variables
+- Pearson correlation coeficient
+  - Most familiar measure of dependence between two quentities
+  
+When the line perfectly fits the linear representation then we can consider the correlation to be positive, on the otherhand, when the data can be considered to be close, but not perfectly matached the correlation can be considered to be -1, and the cases when no linear correlation can be drawn between the varibles. 
+
+$$
+ corr(X,Y) = \frac {cov(X,Y)} {\sigma X \sigma Y} = \frac {E[(X-)]} {\sigma X \sigma Y}
+$$
+
