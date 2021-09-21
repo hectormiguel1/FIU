@@ -22,6 +22,10 @@
   - [Stratified cross-validation](#stratified-cross-validation)
 - [Linear Regression](#linear-regression)
   - [Correlation (r)](#correlation-r)
+  - [Ordinary Least Squares (OLS)](#ordinary-least-squares-ols)
+  - [Optimization](#optimization)
+  - [Linear regression with categorical cariables](#linear-regression-with-categorical-cariables)
+- [Optimization](#optimization-1)
 
 
 # Class 8-31 : Introduction to Machine Learning
@@ -226,9 +230,66 @@ When dandomly slelecting training or test sets, ensure that class proportions ar
 - Pearson correlation coeficient
   - Most familiar measure of dependence between two quentities
   
-When the line perfectly fits the linear representation then we can consider the correlation to be positive, on the otherhand, when the data can be considered to be close, but not perfectly matached the correlation can be considered to be -1, and the cases when no linear correlation can be drawn between the varibles. 
+When the line perfectly fits the representation then we can consider the correlation to be positive, on the other hand, when the data can be considered to be close, but not perfectly matached the correlation can be considered to be -1, and the cases when no linear correlation can be drawn between the varibles. 
 
 $$
- corr(X,Y) = \frac {cov(X,Y)} {\sigma X \sigma Y} = \frac {E[(X-)]} {\sigma X \sigma Y}
+ corr(X,Y) = \frac {cov(X,Y)} {\sigma_X \sigma_Y} = \frac {E[(X-)]} {\sigma_X \sigma_Y} = \frac {\sum {(x_i - \bar{x})}} {\sqrt{\sum{(x_i - \bar{x})} \sqrt{\sum{(y_1 - \bar{y})}}}}
 $$
+
+- How to represent the data as a vector/matrix
+  - We assume a model:
+     $$
+     \bar{y} = b_0 + bX + \epsilon
+     $$
+  - where \(b_0\) abd b are the intercept and slope, knosn as coefficients or parameters, \(\epsilon \) is the error term (typically assume that \(\epsilon \sim  N(\mu, \sigma^2)\)
+  - Include bias constant in the input vector 
+    $$
+    X \in \real^{n * (p+ 1)}, y \in \real^{p+1}, e \in \real^{n}
+    $$ 
+
+    $$
+        y = X \cdot b + e  
+    $$
+
+## Ordinary Least Squares (OLS)
+
+$$
+  Y = Xb + e
+$$
+- Estimate the unkown parameters (b) on ;omear regression model
+- Minimizing the sum of squares of the differences between the observed responses and the preicted by a liner function 
+- Sum of Squared error : 
+  $$
+    \sum^n _{i=1} (y_i - x_i * b) ^2
+  $$ 
+
+## Optimization 
+- Need to minimize the error:
+  $$
+  min J(b) = \sum^{n}_{i=1} {(y_i - x_i * b)^2}
+  $$
+
+  <h2> I REALLY HOPE ALL THIS MATH IS NOT ON EXAM!!!!!</h2>
+
+## Linear regression with categorical cariables
+
+- We assumed that all variables are continuous variables
+- Categorical variables:
+  - Oridanl variables - Encode data with continues values 
+  - Nominal Values - Use dummy variables
+  - For binary classication
+    - encode class labels as y = {0,1} or {-1, 1}
+    - Apply OLS
+    - Check which class the prediction is closer to 
+      - If class 1 is encoded to 1 and class 2 is -1.
+        - class 1 if f(x) >= 0
+        - clas2 2 if f(x) < 
+    - Linear models are not optimized for classification 
+  - Logistic Regression
+
+# Optimization 
+
+- Minimization: Cost/Loss Function (ML)
+- Maximization: Profit
+
 
