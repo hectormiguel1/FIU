@@ -18,6 +18,15 @@ B. Retrive title and language of all USA release country movies which were relea
     AND mov_year <= 2020
 ```
 
+C. Retrive a list of first names of all the actors who were cast in the movie "The Godfather" and the roles they played in the production.
+
+```sql
+    SELECT act_fname, act_lname, role 
+    FROM actor, movie, movie_cast, 
+    WHERE movie_cast.act_id = actor.act_id 
+    AND movie_cast.mov_id = movie.mod_id 
+    AND movie.mov_title = "The Godfather"
+```
 
 
 
