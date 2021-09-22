@@ -1,12 +1,22 @@
-# Table Of Contents
+<h1>Assigment # 1 </h1>
 
-- [Table Of Contents](#table-of-contents)
-  - [Question 1](#question-1)
-  - [Question 2](#question-2)
-    - [Initial Query Tree](#initial-query-tree)
-  - [Question 3](#question-3)
-    - [Initial Query Tree](#initial-query-tree-1)
-  - [Originality Declaration](#originality-declaration)
+<h3> Hector M. Ramirez. </h3>
+<h3> Panther ID: ######## </h3>
+
+<h3>COP 4751: Advanced Database Management</h3>
+
+<h3>Desclaimer: Graphs in this document are rendered using Mermaid Markdown framework. </h3>
+
+<div style="page-break-after: always;"></div>
+
+<h1> Table Of Contents </h1>
+
+- [Question 1](#question-1)
+- [Question 2](#question-2)
+  - [Initial Query Tree](#initial-query-tree)
+- [Question 3](#question-3)
+  - [Initial Query Tree](#initial-query-tree-1)
+- [Originality Declaration](#originality-declaration)
 
 
 <div style="page-break-after: always;"></div>
@@ -82,7 +92,7 @@ C Consider the following query specified on Movie Database:
 ### Initial Query Tree
 
 ```mermaid
-    graph TD;
+    graph BT;
         id1[(Movie M)] --> id2(M.title = Titanic)
         id2(M.title = Titanic) --> id3(M.movieID =  C.movieID)
         id4[(Movie_Cast C)]  --> id3(M.movieID =  C.movieID)
@@ -117,7 +127,7 @@ b. Show the initial query tree.
 ### Initial Query Tree
 
 ```mermaid
-graph TD;
+graph BT;
     id1[(Studio S)] --> id(S.studioName = 'FOX')
     id(S.studioName = 'FOX') --> id2(M.movieID = S.movieID)
     id4[(Movie M)] --> id2(M.movieID = S.movieID)
