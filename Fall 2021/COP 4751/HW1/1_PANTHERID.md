@@ -14,6 +14,8 @@
 - [Question 1](#question-1)
 - [Question 2](#question-2)
   - [Initial Query Tree](#initial-query-tree)
+  - [Slightly Optimized Query Tree](#slightly-optimized-query-tree)
+  - [Optimized Query Tree](#optimized-query-tree)
 - [Question 3](#question-3)
   - [Initial Query Tree](#initial-query-tree-1)
 - [Originality Declaration](#originality-declaration)
@@ -89,19 +91,52 @@ C Consider the following query specified on Movie Database:
 
 <div style="page-break-after: always;"></div>
 
+<center>
+
 ### Initial Query Tree
 
 ```mermaid
     graph BT;
-        id1[(Movie M)] --> id2(M.title = Titanic)
-        id2(M.title = Titanic) --> id3(M.movieID =  C.movieID)
-        id4[(Movie_Cast C)]  --> id3(M.movieID =  C.movieID)
-        id3(M.movieID =  C.movieID) --> id5(C.actorID = A.actorID)
-        id6[(Actor A)] --> id5(C.actorID = A.actorID)
-        id5(C.actorID = A.actorID) --> id7(A.act_gender = M)
-        id7(A.act_gender = M) --> id8(A.lname)
+        id((MOVIE M)) --- id5("⋈(M.movID = C.movID)")
+        id3((MOVIE_CAST C)) --- id5("⋈(M.movID = C.movID)")
+        id5("⋈(M.movID = C.movID)") --- id6("⋈(C.act_id = A.act_id)")
+        id4((ACTOR A)) --- id6("⋈(C.act_id = A.act_id)") --- id2("ϭ (M.mov_title = Titanic)") --- id7("ϭ(A.act_gender = 'M')") --- id8("Π(A.act_lname)")
 ```
 
+</center>
+<div style="page-break-after: always;"></div>
+
+<center>
+
+### Slightly Optimized Query Tree
+
+```mermaid
+    graph BT;
+        id((MOVIE M)) --- id2("ϭ (M.mov_title = Titanic)")
+        id2("ϭ (M.mov_title = Titanic)") --- id5("⋈(M.movID = C.movID)")
+        id3((MOVIE_CAST C)) --- id5("⋈(M.movID = C.movID)")
+        id5("⋈(M.movID = C.movID)") --- id6("⋈(C.act_id = A.act_id)")
+        id4((ACTOR A)) --- id6("⋈(C.act_id = A.act_id)") --- id7("ϭ(A.act_gender = 'M')") --- id8("Π(A.act_lname)")
+```
+
+</center>
+<div style="page-break-after: always;"></div>
+
+<center>
+
+### Optimized Query Tree
+
+```mermaid
+     graph BT;
+        id((MOVIE M)) --- id2("ϭ (M.mov_title = Titanic)")
+        id2("ϭ (M.mov_title = Titanic)") --- id5("⋈(M.movID = C.movID)")
+        id3((MOVIE_CAST C)) --- id5("⋈(M.movID = C.movID)")
+        id5("⋈(M.movID = C.movID)") --- id6("⋈(C.act_id = A.act_id)")
+        id4((ACTOR A)) --- id7("ϭ(A.act_gender = 'M')") --- id6("⋈(C.act_id = A.act_id)") --- id8("Π(A.act_lname)")
+
+```
+
+</center>
 <div style="page-break-after: always;"></div>
 
 ## Question 3
@@ -120,6 +155,7 @@ a. Write down the query to find the titles and years of movies made by "FOX" tha
     FROM Movie M, Studio S
     WHERE S.studioName = "FOX"
     AND S.movieID = M.movieID
+    AND M.mov_time >=100
 ```
 
 b. Show the initial query tree.
