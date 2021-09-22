@@ -79,8 +79,7 @@ B. Find how many movies are there in each genre.
     FROM movie
     NATURAL JOIN  movie_genres
     NATURAL JOIN  genres
-    GROUP BY gen_title;
-
+    GROUP BY gen_title
 ```
 
 C Consider the following query specified on Movie Database:
