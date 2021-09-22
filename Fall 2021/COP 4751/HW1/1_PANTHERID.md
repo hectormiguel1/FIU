@@ -74,6 +74,15 @@ OR M.mov_year > 2003
 
 B. Find how many movies are there in each genre.
 
+```sql
+    SELECT gen_title, COUNT(gen_title) 
+    FROM movie
+    NATURAL JOIN  movie_genres
+    NATURAL JOIN  genres
+    GROUP BY gen_title;
+
+```
+
 C Consider the following query specified on Movie Database:
 
 ```sql
