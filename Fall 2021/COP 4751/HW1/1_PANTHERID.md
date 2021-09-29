@@ -1,7 +1,7 @@
 <h1>Assigment # 1 </h1>
 
 <h3> Hector M. Ramirez. </h3>
-<h3> Panther ID: ######## </h3>
+<h3> Panther ID: 5708475</h3>
 
 <h3>COP 4751: Advanced Database Management</h3>
 
@@ -108,7 +108,7 @@ C Consider the following query specified on Movie Database:
         id((MOVIE M)) --- id5("⋈(M.movID = C.movID)")
         id3((MOVIE_CAST C)) --- id5("⋈(M.movID = C.movID)")
         id5("⋈(M.movID = C.movID)") --- id6("⋈(C.act_id = A.act_id)")
-        id4((ACTOR A)) --- id6("⋈(C.act_id = A.act_id)") --- id2("ϭ (M.mov_title = Titanic)") --- id7("ϭ(A.act_gender = 'M')") --- id8("Π(A.act_lname)")
+        id4((ACTOR A)) --- id6("⋈(C.act_id = A.act_id)") --- id2("σ (M.mov_title = Titanic)") --- id7("σ(A.act_gender = 'M')") --- id8("Π(A.act_lname)")
 ```
 
 </center>
@@ -120,11 +120,11 @@ C Consider the following query specified on Movie Database:
 
 ```mermaid
     graph BT;
-        id((MOVIE M)) --- id2("ϭ (M.mov_title = Titanic)")
-        id2("ϭ (M.mov_title = Titanic)") --- id5("⋈(M.movID = C.movID)")
+        id((MOVIE M)) --- id2("σ (M.mov_title = Titanic)")
+        id2("σ (M.mov_title = Titanic)") --- id5("⋈(M.movID = C.movID)")
         id3((MOVIE_CAST C)) --- id5("⋈(M.movID = C.movID)")
         id5("⋈(M.movID = C.movID)") --- id6("⋈(C.act_id = A.act_id)")
-        id4((ACTOR A)) --- id6("⋈(C.act_id = A.act_id)") --- id7("ϭ(A.act_gender = 'M')") --- id8("Π(A.act_lname)")
+        id4((ACTOR A)) --- id6("⋈(C.act_id = A.act_id)") --- id7("σ(A.act_gender = 'M')") --- id8("Π(A.act_lname)")
 ```
 
 </center>
@@ -136,11 +136,11 @@ C Consider the following query specified on Movie Database:
 
 ```mermaid
      graph BT;
-        id((MOVIE M)) --- id2("ϭ (M.mov_title = Titanic)")
-        id2("ϭ (M.mov_title = Titanic)") --- id5("⋈(M.movID = C.movID)")
+        id((MOVIE M)) --- id2("σ (M.mov_title = Titanic)")
+        id2("σ (M.mov_title = Titanic)") --- id5("⋈(M.movID = C.movID)")
         id3((MOVIE_CAST C)) --- id5("⋈(M.movID = C.movID)")
         id5("⋈(M.movID = C.movID)") --- id6("⋈(C.act_id = A.act_id)")
-        id4((ACTOR A)) --- id7("ϭ(A.act_gender = 'M')") --- id6("⋈(C.act_id = A.act_id)") --- id8("Π(A.act_lname)")
+        id4((ACTOR A)) --- id7("σ(A.act_gender = 'M')") --- id6("⋈(C.act_id = A.act_id)") --- id8("Π(A.act_lname)")
 
 ```
 
@@ -172,10 +172,10 @@ b. Show the initial query tree.
 
 ```mermaid
 graph BT;
-    id1[(Studio S)] --> id(S.studioName = 'FOX')
-    id(S.studioName = 'FOX') --> id2(M.movieID = S.movieID)
-    id4[(Movie M)] --> id2(M.movieID = S.movieID)
-    id2(M.movieID = S.movieID) --> id3(M.movieTitle, M.movieYear)
+    id1((Studio S)) --- id("σ(S.studioName = 'FOX)")
+    id("σ(S.studioName = 'FOX')") --- id2("⋈ (M.movieID = S.movieID)")
+    id4((Movie M)) --- id2("⋈(M.movieID = S.movieID)")
+   id2("⋈(M.movieID = S.movieID)") --- id3("Π(M.movieTitle, M.movieYear)")
 ```
 
 <div style="page-break-after: always;"></div>
@@ -186,13 +186,13 @@ graph BT;
 
 Name: Hector Ramirez
 
-Panther-ID: _______
+Panther-ID: 5708475
 
 Course: COP-4751
 
 Assignment#: 1
 
-Due:
+Due: 09/22/21
 
 I hereby certify that this work is my own and none of it is the work of any other person.
 
