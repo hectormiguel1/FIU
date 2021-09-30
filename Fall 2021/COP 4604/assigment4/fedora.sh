@@ -1,5 +1,4 @@
 #!/bin/bash
-
 if [ "$1" -le 0 ];
     then
         echo "Unable to run fibonacci sequence with numbers of 0 or less"
