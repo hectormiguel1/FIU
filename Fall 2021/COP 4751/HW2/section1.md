@@ -131,7 +131,7 @@ S5: R1(X) R2(Z) R1(Z) R3(X) R3(Y) W1(X) C1 W3(Y) C3 R2(Y) W2(Z) C2
 
 S6: R1(X) R2(Z) R1(Z) R3(X) R3(Y) W1(X) W3(Y) R2(Y) W2(Z) C1 C2 C3
 
-### Schedule 5
+## Schedule 5
 
 | T1 | T2 | T3 |
 | - | - | - |
@@ -148,3 +148,47 @@ S6: R1(X) R2(Z) R1(Z) R3(X) R3(Y) W1(X) W3(Y) R2(Y) W2(Z) C1 C2 C3
 | | W2(Z) | |
 | | W2(Y) | |
 | | C2 | |
+
+### Schedule 5 Graph
+
+```mermaid
+    graph LR;
+        T3 --> T1;
+        T3 --> T2;
+        T1 --> T2;
+
+```
+
+### Schedule 5 can be serialized in the type of  T3-> T1 -> T2
+
+### S5 Serialized: R3(X) R3(Y) W3(Y) C3 R1(X) R1(Z) W1(X) C1 R2(Z) R2(Y) W2(Z) W2(Y) C2
+
+## Schedule 6
+
+S6: R1(X) R2(Z) R1(Z) R3(X) R3(Y) W1(X) W3(Y) R2(Y) W2(Z) C1 C2 C3
+
+| T1 | T2 | T3 |
+| - | - | - |
+| R1(X) | | |
+| | R2(Z) | |
+| R1(Z) | | |
+| | | R3(X) |
+| | | R3(Y) |
+| W1(X) | | |
+| | | W3(Y) |
+| | R2(Y) | |
+| | W2(Z) | |
+| C1 | | |
+| | C2 | |
+| | | C3 |
+
+### Schedule 6 Graph
+
+```mermaid
+graph LR;
+    T3 --> T1
+    T3 --> T2
+    T1 --> T2
+```
+### Schedule 6 can be serialized in 
+
