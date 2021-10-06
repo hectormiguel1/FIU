@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -eq 0 ]; then echo "No arguments passed"; exit; fi 
+if [ $# -eq 0 ]; then echo "No arguments passed"; exit; fi
 
 if [ "$1" -le 0 ];
     then
@@ -17,6 +17,6 @@ if [ "$1" -le 0 ];
             fib1=$fib2
             fib2=$fib3
             echo -n ", $fib3"
-        done 
+        done
 fi
 echo ""
