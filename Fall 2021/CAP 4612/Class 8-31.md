@@ -26,6 +26,9 @@
   - [Optimization](#optimization)
   - [Linear regression with categorical cariables](#linear-regression-with-categorical-cariables)
 - [Optimization](#optimization-1)
+- [Logistic Regression Model](#logistic-regression-model)
+  - [Maximum Likelihood ERstimation (MLE)](#maximum-likelihood-erstimation-mle)
+  - [Likelihood Function:](#likelihood-function)
 
 
 # Class 8-31 : Introduction to Machine Learning
@@ -232,30 +235,38 @@ When dandomly slelecting training or test sets, ensure that class proportions ar
   
 When the line perfectly fits the representation then we can consider the correlation to be positive, on the other hand, when the data can be considered to be close, but not perfectly matached the correlation can be considered to be -1, and the cases when no linear correlation can be drawn between the varibles. 
 
-$$
- corr(X,Y) = \frac {cov(X,Y)} {\sigma_X \sigma_Y} = \frac {E[(X-)]} {\sigma_X \sigma_Y} = \frac {\sum {(x_i - \bar{x})}} {\sqrt{\sum{(x_i - \bar{x})} \sqrt{\sum{(y_1 - \bar{y})}}}}
-$$
+<!-- $$
+ corr(X,Y)=\frac{cov(X,Y)}{\sigma_X\sigma_Y}=\frac{E[(X-)]}{\sigma_X\sigma_Y}=\frac{\sum{(x_i-\bar{x})}}{\sqrt{\sum{(x_i-\bar{x})}\sqrt{\sum{(y_1-\bar{y})}}}}
+$$ --> 
+
+<div align="center"><img style="background: white;" src="svg/Ay4eSVsnL0.svg"></div>
 
 - How to represent the data as a vector/matrix
   - We assume a model:
-     $$
-     \bar{y} = b_0 + bX + \epsilon
-     $$
-  - where \(b_0\) abd b are the intercept and slope, knosn as coefficients or parameters, \(\epsilon \) is the error term (typically assume that \(\epsilon \sim  N(\mu, \sigma^2)\)
-  - Include bias constant in the input vector 
-    $$
-    X \in \real^{n * (p+ 1)}, y \in \real^{p+1}, e \in \real^{n}
-    $$ 
+  
+     <!-- $$
+     \bar{y}=b_0+bX+\epsilon
+     $$ --><div align="center"><img style="background: white;" src="svg/TkIK4t0yAd.svg"></div>
 
-    $$
-        y = X \cdot b + e  
-    $$
+  - where \(b_0\) and b are the intercept and slope, knosn as coefficients or parameters, \(\epsilon \) is the error term (typically assume that \(\epsilon \sim  N(\mu, \sigma^2)\)
+  - Include bias constant in the input vector 
+  
+    <!-- $$
+      X\in{R^{n*(p+1)}},y\in{R^{p+1},e\in R^{n}}
+    $$ --> 
+
+<div align="center"><img style="background: white;" src="svg/eIOaUFZuH1.svg"></div>
+
+<div align="center"><img style="background: white;" src="svg/6541jBx1u7.svg"></div>
+   
 
 ## Ordinary Least Squares (OLS)
 
-$$
+<!-- $$
   Y = Xb + e
-$$
+$$ --> 
+
+<div align="center"><img style="background: white;" src="svg/6ZxGXveuWE.svg"></div>
 - Estimate the unkown parameters (b) on ;omear regression model
 - Minimizing the sum of squares of the differences between the observed responses and the preicted by a liner function 
 - Sum of Squared error : 
@@ -265,9 +276,12 @@ $$
 
 ## Optimization 
 - Need to minimize the error:
-  $$
-  min J(b) = \sum^{n}_{i=1} {(y_i - x_i * b)^2}
-  $$
+  
+  <!-- $$
+  min J(b)=\sum^{n}_{i=1}{(y_i - x_i * b)^2}
+  $$ --> 
+
+<div align="center"><img style="background: white;" src="svg/wSt9raUywu.svg"></div>
 
   <h2> I REALLY HOPE ALL THIS MATH IS NOT ON EXAM!!!!!</h2>
 
@@ -293,3 +307,29 @@ $$
 - Maximization: Profit
 
 
+# Logistic Regression Model
+
+<!-- $$
+  \log(\frac{P(Y=1|X)}{P(Y=0|X)})=Xb
+$$ --> 
+
+<div align="center"><img style="background: white;" src="svg/ktxohntY2C.svg"></div>
+
+- Ranges from negative infinity to positive infinity ideal for...
+
+## Maximum Likelihood ERstimation (MLE) 
+
+- Likelihood functuin: probobility of the observed data as a function of the unkown parameters. 
+- The estimate unkown paramters that maximizes the likelihood of getting the data we observed in a probabilistic model.
+
+## Likelihood Function:
+
+<!-- $$
+  L(b;X)=\Pi^{n}_{i=1} {p(x_i)^{y_i}(1-p(x_i))^{1-y_1}} 
+$$ --> 
+
+<div align="center"><img style="background: white;" src="svg/C3E35Y0ko3.svg"></div>
+
+$$
+
+$$

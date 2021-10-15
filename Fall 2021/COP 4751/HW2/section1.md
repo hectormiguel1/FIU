@@ -190,5 +190,6 @@ graph LR;
     T3 --> T2
     T1 --> T2
 ```
-### Schedule 6 can be serialized in 
+### Schedule 6 can be serialized in T3->T1->T2
 
+### S6 Serialized: R3(X) R3(Y) W3(Y) C3 R1(X) R1(Z) W1(X) C1 R2(Z) R2(Y) W2(Z) W2(Y) C2
