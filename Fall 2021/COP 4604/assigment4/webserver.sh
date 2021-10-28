@@ -49,7 +49,7 @@ function init() {
             exit $ERROR;
     fi
     #Clean whatever is currently in index.html
-    > /var/www/html/index.html
+    true > /var/www/html/index.html
 
     case $server in
         httpd)
