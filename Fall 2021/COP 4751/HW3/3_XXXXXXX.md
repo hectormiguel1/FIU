@@ -11,6 +11,101 @@ The 'databse' below has four transactions. What ssociation rules can be found in
 
 Show each step of your calculation in details (ie item sets containing one item, two items like this), as each step will be graded individually.
 
+
+<!-- $$
+    Support_A=\frac{Num\space A}{Num\space Transactions}
+$$ --> 
+
+<div align="center"><img style="background: white;" src="../svg/uCP0RFBWde.svg"></div> 
+
+<!-- $$
+    Support_A={{Num\space of\space times\space A\space occured}\over{Total\space Num\space Transactions}}
+$$ --> 
+
+
+<div align="center"><img style="background: white;" src="../svg/lPiAvKNrqz.svg"></div>
+
+| Item | Frequency | Support |
+| - | - | - |
+| A | 4 | 4/4 = 100% |
+| B | 4 | 4/4 = 100% |
+| C | 2 | 2/4 = 50% | 
+| D | 3 | 3/4 = 75% |
+| E | 2 | 2/4 = 50% |
+| K | 1 | 1/4 = 25% |
+
+## Requireing minimum Support of 60% C, E, K Are eliminated
+
+## Possble Pairs, AB, BD, AD
+
+| Item Pairs | Frequency | Support |
+| - | - | - |
+| A, B | 4 | 4/4 = 100% |
+| B, D | 3 | 3/4 = 75% | 
+| A, D | 3 | 3/4 = 75% | 
+
+## No Pairs are eliminated
+
+ Possible Rules:
+<!-- $$
+   (A\implies B),(B\implies A),(B\implies D),(D\implies B),(A\implies D)\space and(D\implies A) 
+$$ --> 
+
+<div align="center"><img style="background: white;" src="../svg/e4Pa3oeg6T.svg"></div>
+
+<!-- $$
+  Confidence(A\implies B)=\frac{Support(A\cup B)}{Support(A)}=\frac{100}{100}=1
+$$ --> 
+
+<div align="center"><img style="background: white;" src="../svg/eDFhYoth87.svg"></div>
+
+
+<!-- $$
+    Confifence(B\implies A)=\frac{Support(A\cup B)}{Support(B)}=\frac{100}{100}=1
+$$ --> 
+
+<div align="center"><img style="background: white;" src="../svg/pfb3jKffkE.svg"></div>
+
+<!-- $$
+    Confidence(B\implies D)=\frac{Support(B\cup D)}{Support(B)}=\frac{3\times4}{4\times4}=0.75
+$$ --> 
+
+<div align="center"><img style="background: white;" src="../svg/NYoW5adShM.svg"></div>
+
+<!-- $$
+    Confidence(D\implies B)=\frac{Support(B\cup D)}{Support(D)}=\frac{3\times4}{4\times3}=1
+$$ --> 
+
+<div align="center"><img style="background: white;" src="../svg/1cUZc5cuoS.svg"></div>
+
+<!-- $$
+    Condifidence(A\implies D)=\frac{Support(A\cup D)}{Support(A)}=\frac {3\times4}{4\times4}=0.75
+$$ --> 
+
+<div align="center"><img style="background: white;" src="../svg/Wvjz8qIXxI.svg"></div>
+
+<!-- $$
+    Confidence(D\implies A)=\frac{Support(A\cup D)}{Support(D)}=\frac{3\times4}{4\times3}=1
+$$ --> 
+
+<div align="center"><img style="background: white;" src="../svg/UHlOZTe2Ow.svg"></div>
+
+## Due to minimum confidence of 80% 
+<!-- $$
+ (B\implies D)\space and\space (A\implies D)
+$$ --> 
+
+<div align="center"><img style="background: white;" src="../svg/OnMAmLRZjD.svg"></div>
+
+## Are eliminated
+
+## Association Rules:
+<!-- $$
+ (A\implies B),(B\implies A),(D\implies B)\space and\space (D\implies A)
+$$ --> 
+
+<div align="center"><img style="background: white;" src="../svg/nIIIR10eSl.svg"></div>
+
 # 2. Using  the XML Decument bellow (library with books), define the following queries in XQuery:
 
 a. Give the titles of all books sorted by price.
@@ -80,7 +175,7 @@ c. Give for each author, the number of books they have written.
 
 Name: Hector Ramirez
 
-Panther-ID: 5708475
+Panther-ID: 
 
 Course: COP-4751
 
