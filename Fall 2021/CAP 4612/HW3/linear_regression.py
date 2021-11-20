@@ -56,14 +56,12 @@ tprs = []
 fprs = []
 accuracies = []
 for train_index, test_index in kfold.split(normalized_features,labels):
-    y_train_kfolds = labels.iloc[train_index]
-    y_test_kfolds = labels.iloc[test_index]
-    X_test_kfolds = normalized_features.iloc[test_index]
-    X_train_kfolds = normalized_features.iloc[train_index]
-    b_kfold =solveLinearRegresion(X_train_kfolds, y_train_kfolds)
-    predictions_kfold = predict(X_test_kfolds, b_kfold,0.5)
-    accuracies.append(accuracy(predictions_kfold, y_test_kfolds))
-    tp, fn, fp, tn = confusion_matrix(y_test_kfolds,predictions_kfold,labels=[0,1]).reshape(-1)
+    X_train, X_test = normalized_features.iloc[train_index], normalized_features.iloc[test_index]
+    y_train, y_test = labels.iloc[train_index], labels.iloc[test_index]
+    b =solveLinearRegresion(X_train, y_train)
+    predictions = predict(X_test, b,0.5)
+    accuracies.append(accuracy(predictions, y_test))
+    tp, fn, fp, tn = confusion_matrix(y_test,predictions,labels=[0,1]).reshape(-1)
     tprs.append(tp/(tp+fn))
     fprs.append(fp/(fp+tn))
 
