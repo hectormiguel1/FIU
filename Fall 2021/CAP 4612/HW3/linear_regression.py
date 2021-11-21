@@ -55,10 +55,15 @@ kfold = KFold(n_splits=10, shuffle=True)
 tprs = []
 fprs = []
 accuracies = []
+learning_rate = 1e-4
 for train_index, test_index in kfold.split(normalized_features,labels):
     X_train, X_test = normalized_features.iloc[train_index], normalized_features.iloc[test_index]
     y_train, y_test = labels.iloc[train_index], labels.iloc[test_index]
-    b =solveLinearRegresion(X_train, y_train)
+    b = np.zeros(shape=(X_train.shape[1], 1))
+    
+    for i in range(200):
+       b = b - learning_rate * GD_LR(X_train, y_train, b) 
+       
     predictions = predict(X_test, b,0.5)
     accuracies.append(accuracy(predictions, y_test))
     tp, fn, fp, tn = confusion_matrix(y_test,predictions,labels=[0,1]).reshape(-1)
