@@ -4,7 +4,7 @@ zodiacs=($(echo "$csv" | awk -F "\"*,\"*" '{print $8}' | sort -u))
 size=${#zodiacs[@]}
 
 for item in {0..1000}; do
-    curl localhost/zodiac/"${zodiacs[$((RANDOM%size))]}"
+    curl localhost/"${zodiacs[$((RANDOM%size))]}"
 done
 
     
