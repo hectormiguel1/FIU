@@ -1,0 +1,10 @@
+[Unit]
+Description=Performs audit of /var/logs/httpd/logs/access_log and stores result in /root/audit.txt
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/username-audit
+
+[Install]
+WantedBy=multi-user.target
