@@ -1,6 +1,6 @@
 #!/bin/bash
 
-csv=$(curl -s http://users.cis.fiu.edu/~ggome002/files/hrami024.csv)
+csv=$(curl -s http://users.cis.fiu.edu/~ggome002/files/{USERNAME}.csv)
 zodiacs=($(echo "$csv" | awk -F "\"*,\"*" '{print $8}' | sort -u))
 audit_file='/root/audit.txt'
 http_audit_file="/etc/httpd/logs/access_log"
